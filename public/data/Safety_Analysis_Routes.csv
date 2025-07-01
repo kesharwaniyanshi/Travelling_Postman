@@ -1,0 +1,4 @@
+City,Safety Index,Status,Weather Info,News Articles
+Mumbai,100,Safe,"{'main': 'Haze', 'aqi': 0}",No relevant news
+Hyderabad,100,Safe,"{'main': 'Haze', 'aqi': 0}",No relevant news
+Chennai,100,Safe,"{'main': 'Drizzle', 'aqi': 0}",No relevant news

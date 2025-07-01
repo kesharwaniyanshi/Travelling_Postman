@@ -1,0 +1,51 @@
+City_ID,City,State,Latitude,Longitude,Airport,Pincode
+1,Chennai,Tamil Nadu,13.067439,80.237617,Yes,600001
+2,Chittorgarh,Rajasthan,24.879999,74.629997,No,312001
+3,Ratnagiri,Maharashtra,16.994444,73.300003,Yes,415612
+4,Goregaon,Maharashtra,19.155001,72.849998,No,400104
+5,Pindwara,Rajasthan,24.7945,73.055,No,307022
+6,Raipur,Chhattisgarh,21.25,81.629997,Yes,492001
+7,Gokak,Karnataka,16.1667,74.833298,No,591307
+8,Lucknow,Uttar Pradesh,26.85,80.949997,Yes,226001
+9,Delhi,Delhi,28.679079,77.06971,Yes,110001
+10,Mumbai,Maharashtra,19.07609,72.877426,Yes,400001
+11,Sagar,Karnataka,14.16704,75.040298,Yes,577401
+12,Jalpaiguri,West Bengal,26.540457,88.719391,Yes,735101
+13,Pakur,Jharkhand,24.633568,87.849251,No,816107
+14,Sardarshahar,Rajasthan,28.440554,74.493011,No,331403
+15,Sirohi,Rajasthan,24.882618,72.858894,Yes,307001
+16,Jaysingpur,Maharashtra,16.779877,74.556374,No,416101
+17,Ramanagara,Karnataka,12.715035,77.281296,No,562159
+18,Hyderabad,Telangana,17.38714,78.491684,Yes,500001
+19,Channapatna,Karnataka,12.651805,77.208946,No,562160
+20,Surendranagar,Gujarat,22.728392,71.637077,No,363001
+21,Thiruvalla,Kerala,9.383452,76.574059,Yes,689101
+22,Ranebennur,Karnataka,14.623801,75.621788,No,581115
+23,Karaikal,Puducherry,10.92544,79.838005,No,609602
+24,Belgaum,Karnataka,15.852792,74.498703,Yes,590001
+25,Chatrapur,Odisha,19.354979,84.986732,No,761020
+26,Suri,West Bengal,23.905445,87.52462,Yes,731101
+27,Bhubaneswar,Odisha,20.296059,85.824539,Yes,751001
+28,Mahuva,Gujarat,21.105001,71.771645,No,364290
+29,Jagadhri,Haryana,30.172716,77.299492,No,135003
+30,Barh,Bihar,25.477585,85.709091,No,803213
+31,Bhusawal,Maharashtra,21.045521,75.801094,No,425201
+32,Alipurduar,West Bengal,26.49189,89.5271,No,736121
+33,Kollam,Kerala,8.893212,76.614143,Yes,691001
+34,Medinipur,West Bengal,22.430889,87.321487,No,721101
+35,Patan,Gujarat,23.849325,72.126625,No,384265
+36,Mettur,Tamil Nadu,11.786253,77.800781,No,636401
+37,Huliyar,Karnataka,13.583274,76.540154,No,572218
+38,Harihar,Karnataka,14.530457,75.801094,Yes,577601
+39,Rasayani,Maharashtra,18.901457,73.176132,No,410207
+40,Haringhata,West Bengal,22.96051,88.567406,No,741249
+41,Kushtagi,Karnataka,15.756595,76.192696,No,583277
+42,Jadugora,Jharkhand,22.656015,86.352882,No,832102
+43,Orai,Uttar Pradesh,25.989836,79.450035,No,285001
+44,Surajpur,Chhattisgarh,23.223047,82.87056,No,497229
+45,Ambernath,Maharashtra,19.186354,73.191948,No,421501
+46,Malerkotla,Punjab,30.525005,75.890121,No,148023
+47,Jorapokhar,Jharkhand,22.422455,85.760651,No,828112
+48,Vizianagaram,Andhra Pradesh,18.106659,83.395554,No,535001
+49,Durg,Chhattisgarh,21.190449,81.28492,Yes,491001
+50,Himmatnagar,Gujarat,23.597969,72.969818,No,383001

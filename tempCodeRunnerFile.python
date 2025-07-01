@@ -1,0 +1,136 @@
+import pandas as pd
+import numpy as np
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader, TensorDataset
+from sklearn.preprocessing import MinMaxScaler
+from datetime import datetime
+
+# Load the heuristic dataset
+heuristic_data = pd.read_csv('C:\\Users\\Admin\\Desktop\\heuristic.csv')
+
+# Add today's date as a feature
+today = datetime.now()
+
+# Prepare the dataset for heuristic calculation
+def prepare_heuristic_data(df):
+    # Create a copy to avoid modifying the original dataframe
+    data = df.copy()
+    
+    # Add festival/climate-related columns (you might need to load festival_data if this information is crucial)
+    data['Today_Month'] = today.month
+    data['Is_Festival_Season'] = (data.get('Month', today.month) == today.month).astype(int)
+    data['Bad_Climate'] = data.get('Climate', 'Normal').apply(lambda x: 1 if x in ["Tropical Monsoon", "Dry & Hot"] else 0)
+    data['Target'] = (data['Is_Festival_Season'] | data['Bad_Climate']).astype(int)
+    
+    return data
+
+# Normalize the cost and time columns
+def normalize_features(df):
+    # Identify cost and time columns
+    cost_columns = [col for col in df.columns if 'Cost' in col]
+    time_columns = [col for col in df.columns if 'Time' in col]
+    
+    # Initialize scaler
+    scaler = MinMaxScaler()
+    
+    # Normalize cost and time columns
+    df[cost_columns] = scaler.fit_transform(df[cost_columns])
+    df[time_columns] = scaler.fit_transform(df[time_columns])
+    
+    return df
+
+# Neural Network for Heuristic Calculation
+class HeuristicNet(nn.Module):
+    def __init__(self):
+        super(HeuristicNet, self).__init__()
+        self.fc1 = nn.Linear(3, 8)  # Input features (Cost, Time, Target)
+        self.fc2 = nn.Linear(8, 8)
+        self.fc3 = nn.Linear(8, 1)  # Output heuristic value
+        
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = torch.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+# Prepare data for neural network
+def prepare_tensor_data(df):
+    # Prepare route features
+    route_features = []
+    
+    # Create route features (each row corresponds to 5 routes)
+    for i in range(1, 6):  # 5 routes
+        route_features.append([
+            df[f"Cost {i}"].values, 
+            df[f"Time {i}"].values,
+            df['Target'].values
+        ])
+    
+    # Convert route features into tensors and concatenate
+    features_tensor = torch.tensor(
+        [list(zip(*route)) for route in zip(*route_features)], dtype=torch.float32
+    ).reshape(-1, 3)  # Reshape to match (number_of_routes * rows, 3)
+    
+    # Labels for training (repeat target for each route)
+    labels_tensor = torch.tensor(
+        df['Target'].repeat(5).values, dtype=torch.float32
+    ).view(-1, 1)  # Repeat target for each route
+    
+    return features_tensor, labels_tensor
+
+# Main heuristic calculation function
+def calculate_heuristics(input_file, output_file):
+    # Load and prepare data
+    df = pd.read_csv(input_file)
+    prepared_df = prepare_heuristic_data(df)
+    normalized_df = normalize_features(prepared_df)
+    
+    # Prepare tensor data
+    features_tensor, labels_tensor = prepare_tensor_data(normalized_df)
+    
+    # Initialize the model, loss function, and optimizer
+    model = HeuristicNet()
+    criterion = nn.MSELoss()
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+    
+    # Train the model
+    epochs = 100
+    for epoch in range(epochs):
+        # Create DataLoader for batching
+        dataset = TensorDataset(features_tensor, labels_tensor)
+        dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+        
+        for batch_features, batch_labels in dataloader:
+            # Forward pass
+            outputs = model(batch_features)
+            loss = criterion(outputs, batch_labels)
+            
+            # Backward pass and optimization
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+        
+        # Print loss every 10 epochs
+        if (epoch + 1) % 10 == 0:
+            print(f"Epoch [{epoch + 1}/{epochs}], Loss: {loss.item():.4f}")
+    
+    # Evaluate and calculate heuristics
+    with torch.no_grad():
+        predicted_heuristics = model(features_tensor).numpy()
+    
+    # Add heuristic columns to the dataframe
+    for i in range(1, 6):
+        df[f'Heuristic {i}'] = predicted_heuristics[(i - 1)::5].flatten()
+    
+    # Save the updated dataframe
+    df.to_csv(output_file, index=False)
+    print(f"Heuristic values added and saved to {output_file}")
+    
+    return df
+
+# Run the heuristic calculation
+result_df = calculate_heuristics('heuristic.csv', 'heuristic_with_heuristics.csv')
+
+# Display the first few rows to verify
+print(result_df.head())

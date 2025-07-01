@@ -1,0 +1,51 @@
+City_ID,City,State,Latitude,Longitude,Airport
+1,Chennai,Tamil Nadu,13.067439,80.237617,Yes
+2,Chittorgarh,Rajasthan,24.879999,74.629997,No
+3,Ratnagiri,Maharashtra,16.994444,73.300003,Yes
+4,Goregaon,Maharashtra,19.155001,72.849998,No
+5,Pindwara,Rajasthan,24.7945,73.055,No
+6,Raipur,Chhattisgarh,21.25,81.629997,Yes
+7,Gokak,Karnataka,16.1667,74.833298,No
+8,Lucknow,Uttar Pradesh,26.85,80.949997,Yes
+9,Delhi,Delhi,28.679079,77.06971,Yes
+10,Mumbai,Maharashtra,19.07609,72.877426,Yes
+11,Sagar,Karnataka,14.16704,75.040298,Yes
+12,Jalpaiguri,West Bengal,26.540457,88.719391,Yes
+13,Pakur,Jharkhand,24.633568,87.849251,No
+14,Sardarshahar,Rajasthan,28.440554,74.493011,No
+15,Sirohi,Rajasthan,24.882618,72.858894,Yes
+16,Jaysingpur,Maharashtra,16.779877,74.556374,No
+17,Ramanagara,Karnataka,12.715035,77.281296,No
+18,Hyderabad,Telangana,17.38714,78.491684,Yes
+19,Channapatna,Karnataka,12.651805,77.208946,No
+20,Surendranagar,Gujarat,22.728392,71.637077,No
+21,Thiruvalla,Kerala,9.383452,76.574059,Yes
+22,Ranebennur,Karnataka,14.623801,75.621788,No
+23,Karaikal,Puducherry,10.92544,79.838005,No
+24,Belgaum,Karnataka,15.852792,74.498703,Yes
+25,Chatrapur,Odisha,19.354979,84.986732,No
+26,Suri,West Bengal,23.905445,87.52462,Yes
+27,Bhubaneswar,Odisha,20.296059,85.824539,Yes
+28,Mahuva,Gujarat,21.105001,71.771645,No
+29,Jagadhri,Haryana,30.172716,77.299492,No
+30,Barh,Bihar,25.477585,85.709091,No
+31,Bhusawal,Maharashtra,21.045521,75.801094,No
+32,Alipurduar,West Bengal,26.49189,89.5271,No
+33,Kollam,Kerala,8.893212,76.614143,Yes
+34,Medinipur,West Bengal,22.430889,87.321487,No
+35,Patan,Gujarat,23.849325,72.126625,No
+36,Mettur,Tamil Nadu,11.786253,77.800781,No
+37,Huliyar,Karnataka,13.583274,76.540154,No
+38,Harihar,Karnataka,14.530457,75.801094,Yes
+39,Rasayani,Maharashtra,18.901457,73.176132,No
+40,Haringhata,West Bengal,22.96051,88.567406,No
+41,Kushtagi,Karnataka,15.756595,76.192696,No
+42,Jadugora,Jharkhand,22.656015,86.352882,No
+43,Orai,Uttar Pradesh,25.989836,79.450035,No
+44,Surajpur,Chhattisgarh,23.223047,82.87056,No
+45,Ambernath,Maharashtra,19.186354,73.191948,No
+46,Malerkotla,Punjab,30.525005,75.890121,No
+47,Jorapokhar,Jharkhand,22.422455,85.760651,No
+48,Vizianagaram,Andhra Pradesh,18.106659,83.395554,No
+49,Durg,Chhattisgarh,21.190449,81.28492,Yes
+50,Himmatnagar,Gujarat,23.597969,72.969818,No
