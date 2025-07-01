@@ -312,17 +312,17 @@
     /* flex-wrap: wrap; */
     /* Ensures responsiveness on smaller screens */
     /* justify-content: center; */
-    /* gap: 10px; */
+    /* gap: 50px; */
     /* Centers items if there is space */
 }
 
 .team-item {
-width: 180px;
+width: 250px;
     /* Set a fixed width */
     height: 400px;
     /* Adjust height automatically */
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 50px;
     flex: 0 1 calc(16.66% - 20px);
 }
 
